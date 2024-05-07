@@ -14,20 +14,24 @@ function UserTable({ data }) {
           </tr>
         </thead>
         <tbody className="text-gray-700 text-sm font-light">
-          {data.map((user) => (
-            <tr
-              key={user.id}
-              className="border-b border-gray-200 hover:bg-gray-50"
-            >
-              <td className="py-3 px-6 text-left whitespace-nowrap">
-                {user.id}
-              </td>
-              <td className="py-3 px-6 text-left">{user.name}</td>
-              <td className="py-3 px-6 text-left">{user.username}</td>
-              <td className="py-3 px-6 text-left">{user.email}</td>
-              <td className="py-3 px-6 text-left">{user.phone}</td>
-            </tr>
-          ))}
+          {data.map((user) => {
+            const { street, city, zipcode } = user.address;
+            return (
+              <tr
+                key={user.id}
+                className="border-b border-gray-200 hover:bg-gray-50"
+              >
+                <td className="py-3 px-6 text-left whitespace-nowrap">
+                  {user.id}
+                </td>
+                <td className="py-3 px-6 text-left">{user.name}</td>
+                <td className="py-3 px-6 text-left">{user.username}</td>
+                <td className="py-3 px-6 text-left">{user.email}</td>
+                <td className="py-3 px-6 text-left">{user.phone}</td>
+                <td className="py-3 px-6 text-left">{user.pratik}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
